@@ -1,0 +1,814 @@
+# Manual de Usuario - Gestor de Árbol Binario
+
+## Guía Completa para Usuarios
+
+**Versión:** 1.0  
+**Proyecto:** Matemática Discreta  
+**Fecha:** Noviembre 2025
+
+---
+
+## Tabla de Contenidos
+
+1. [Introducción](#introducción)
+2. [Instalación](#instalación)
+3. [Primeros Pasos](#primeros-pasos)
+4. [Guía de Funciones](#guía-de-funciones)
+5. [Ejemplos Prácticos](#ejemplos-prácticos)
+6. [Preguntas Frecuentes](#preguntas-frecuentes)
+7. [Solución de Problemas](#solución-de-problemas)
+
+---
+
+## Introducción
+
+### ¿Qué es un Árbol Binario?
+
+Un **árbol binario** es una estructura de datos en la que cada elemento (llamado **nodo**) puede tener como máximo dos "hijos":
+- Un **hijo izquierdo**
+- Un **hijo derecho**
+
+### Ejemplo Visual
+
+```
+       A          ← Nodo raíz
+      / \
+     B   C        ← Hijos de A
+    / \
+   D   E          ← Hijos de B
+```
+
+### ¿Para qué sirve este programa?
+
+Este gestor te permite:
+- ✅ Crear y visualizar árboles binarios
+- ✅ Agregar y eliminar nodos
+- ✅ Realizar diferentes tipos de recorridos
+- ✅ Calcular propiedades del árbol (altura, peso)
+- ✅ Buscar nodos específicos
+
+---
+
+## Instalación
+
+### Requisitos
+
+- **Python 3.6 o superior**
+- **Sistema operativo:** Windows, Linux o macOS
+
+### Verificar Python
+
+Abre una terminal o símbolo del sistema y escribe:
+
+```bash
+python --version
+```
+
+Deberías ver algo como: `Python 3.x.x`
+
+### Descargar el Proyecto
+
+1. Descarga los archivos del proyecto
+2. Colócalos en una carpeta (ejemplo: `C:\ArbolBinario\`)
+3. Asegúrate de tener estos 4 archivos:
+   - `arbol_listas.py`
+   - `operaciones_basicas.py`
+   - `arbol_interactivo.py`
+   - `casos_uso.py`
+
+---
+
+## Primeros Pasos
+
+### Ejecutar el Programa
+
+#### En Windows:
+
+1. Abre el **Símbolo del sistema** (cmd)
+2. Navega a la carpeta del proyecto:
+   ```bash
+   cd C:\ruta\a\tu\carpeta
+   ```
+3. Ejecuta el programa:
+   ```bash
+   python arbol_interactivo.py
+   ```
+
+#### En Linux/macOS:
+
+1. Abre la **Terminal**
+2. Navega a la carpeta del proyecto:
+   ```bash
+   cd /ruta/a/tu/carpeta
+   ```
+3. Ejecuta el programa:
+   ```bash
+   python3 arbol_interactivo.py
+   ```
+
+### Primera Vez Usando el Programa
+
+Al iniciar, el programa te pedirá crear el **nodo raíz**:
+
+```
+--- BIENVENIDO AL GESTOR DE ARBOL BINARIO ---
+
+Ingresa el valor del nodo raiz: A
+Arbol creado con raiz 'A'
+```
+
+¡Listo! Ya tienes un árbol con un nodo.
+
+---
+
+## Guía de Funciones
+
+### Menú Principal
+
+Al ejecutar el programa verás este menú:
+
+```
+============================================================
+    GESTOR DE ARBOL BINARIO - Proyecto Matematica Discreta
+============================================================
+
+1. Crear nodo raiz
+2. Agregar hijo izquierdo a un nodo
+3. Agregar hijo derecho a un nodo
+4. Mostrar arbol
+5. Recorrido Preorden
+6. Recorrido Inorden
+7. Recorrido Postorden
+8. Calcular altura del arbol
+9. Verificar si el arbol es binario
+10. Mostrar peso del arbol (cantidad de nodos)
+11. Buscar nodo
+12. Eliminar nodo
+13. Listar todos los nodos
+0. Salir
+============================================================
+```
+
+---
+
+### 1. Crear Nodo Raíz
+
+**¿Qué hace?** Reinicia el árbol con un nuevo nodo raíz.
+
+**⚠️ Advertencia:** Esto borrará todo el árbol actual.
+
+**Cómo usarlo:**
+1. Selecciona opción `1`
+2. Ingresa el valor del nuevo nodo raíz
+3. El árbol se reinicia
+
+**Ejemplo:**
+```
+Selecciona una opcion: 1
+
+Ingresa el valor del nuevo nodo raiz: X
+Arbol reiniciado con raiz 'X'
+```
+
+---
+
+### 2. Agregar Hijo Izquierdo
+
+**¿Qué hace?** Agrega un nuevo nodo como hijo izquierdo de un nodo existente.
+
+**Pasos:**
+1. Selecciona opción `2`
+2. El programa muestra todos los nodos disponibles
+3. Ingresa el nodo padre
+4. Ingresa el valor del nuevo nodo
+
+**Ejemplo:**
+```
+Selecciona una opcion: 2
+
+Nodos disponibles: A
+Nodo padre: A
+Valor del nuevo nodo: B
+Nodo 'B' agregado como hijo izquierdo de 'A'
+```
+
+**Resultado:**
+```
+A
+└── B
+```
+
+---
+
+### 3. Agregar Hijo Derecho
+
+**¿Qué hace?** Agrega un nuevo nodo como hijo derecho de un nodo existente.
+
+**Funciona igual que agregar hijo izquierdo**, pero el nodo se coloca a la derecha.
+
+**Ejemplo:**
+```
+Selecciona una opcion: 3
+
+Nodos disponibles: A, B
+Nodo padre: A
+Valor del nuevo nodo: C
+Nodo 'C' agregado como hijo derecho de 'A'
+```
+
+**Resultado:**
+```
+A
+├── C
+└── B
+```
+
+---
+
+### 4. Mostrar Árbol
+
+**¿Qué hace?** Muestra la estructura visual del árbol.
+
+**Ejemplo:**
+```
+Selecciona una opcion: 4
+
+--- ESTRUCTURA DEL ARBOL ---
+
+A
+├── C
+│   ├── G
+│   └── F
+└── B
+    ├── E
+    └── D
+```
+
+**Interpretación:**
+- Las líneas `├──` y `└──` conectan padres con hijos
+- Las líneas `│` indican continuación de rama
+
+---
+
+### 5. Recorrido Preorden
+
+**¿Qué hace?** Recorre el árbol en orden: **Raíz → Izquierda → Derecha**
+
+**Uso:** Útil para copiar árboles o crear copias.
+
+**Ejemplo:**
+```
+Selecciona una opcion: 5
+
+--- RECORRIDO PREORDEN (Raiz -> Izq -> Der) ---
+A B D E C F G
+```
+
+---
+
+### 6. Recorrido Inorden
+
+**¿Qué hace?** Recorre el árbol en orden: **Izquierda → Raíz → Derecha**
+
+**Uso:** En árboles binarios de búsqueda, muestra los valores ordenados.
+
+**Ejemplo:**
+```
+Selecciona una opcion: 6
+
+--- RECORRIDO INORDEN (Izq -> Raiz -> Der) ---
+D B E A F C G
+```
+
+---
+
+### 7. Recorrido Postorden
+
+**¿Qué hace?** Recorre el árbol en orden: **Izquierda → Derecha → Raíz**
+
+**Uso:** Útil para eliminar árboles o evaluar expresiones.
+
+**Ejemplo:**
+```
+Selecciona una opcion: 7
+
+--- RECORRIDO POSTORDEN (Izq -> Der -> Raiz) ---
+D E B F G C A
+```
+
+---
+
+### 8. Calcular Altura del Árbol
+
+**¿Qué hace?** Calcula cuántos niveles tiene el árbol.
+
+**Definición:** La altura es el número de conexiones (aristas) en el camino más largo desde la raíz hasta una hoja.
+
+**Ejemplo:**
+```
+Selecciona una opcion: 8
+
+Altura del arbol: 3
+```
+
+**Para este árbol:**
+```
+A           ← Nivel 0
+├── C       ← Nivel 1
+│   └── F   ← Nivel 2
+│       └── X ← Nivel 3
+└── B
+
+Altura = 3 (de A hasta X)
+```
+
+---
+
+### 9. Verificar si es Binario
+
+**¿Qué hace?** Verifica que cada nodo tenga máximo 2 hijos.
+
+**Nota:** Este programa siempre crea árboles binarios, así que siempre dirá "Sí".
+
+**Ejemplo:**
+```
+Selecciona una opcion: 9
+
+Si, el arbol es binario.
+Razon: Cada nodo tiene como maximo 2 hijos (izquierdo y derecho).
+Estructura: [valor, hijo_izquierdo, hijo_derecho]
+Total de nodos: 7
+```
+
+---
+
+### 10. Mostrar Peso del Árbol
+
+**¿Qué hace?** Cuenta cuántos nodos tiene el árbol en total.
+
+**Ejemplo:**
+```
+Selecciona una opcion: 10
+
+Peso del arbol (total de nodos): 7
+```
+
+---
+
+### 11. Buscar Nodo
+
+**¿Qué hace?** Encuentra un nodo por su valor y muestra información sobre él.
+
+**Pasos:**
+1. Selecciona opción `11`
+2. Ingresa el valor a buscar
+3. El programa muestra si tiene hijos
+
+**Ejemplo:**
+```
+Selecciona una opcion: 11
+
+Valor del nodo a buscar: B
+Nodo 'B' encontrado
+  Tiene hijo izquierdo: Si
+  Tiene hijo derecho: Si
+```
+
+---
+
+### 12. Eliminar Nodo
+
+**¿Qué hace?** Elimina un nodo del árbol.
+
+**⚠️ Restricciones:**
+- No se puede eliminar un nodo con **dos hijos**
+- Si el nodo tiene un hijo, ese hijo lo reemplaza
+- Si el nodo no tiene hijos (es una hoja), simplemente se elimina
+
+**Pasos:**
+1. Selecciona opción `12`
+2. El programa muestra los nodos disponibles
+3. Ingresa el nodo a eliminar
+
+**Ejemplo exitoso:**
+```
+Selecciona una opcion: 12
+
+Nodos disponibles: A, B, C, D
+Nodo a eliminar: D
+Nodo 'D' eliminado
+```
+
+**Ejemplo bloqueado:**
+```
+Nodo a eliminar: A
+No se puede eliminar: El nodo tiene dos hijos.
+Sugerencia: Elimina primero sus hijos.
+```
+
+---
+
+### 13. Listar Todos los Nodos
+
+**¿Qué hace?** Muestra una lista simple de todos los valores en el árbol.
+
+**Ejemplo:**
+```
+Selecciona una opcion: 13
+
+Nodos del arbol (7 total): A, B, C, D, E, F, G
+```
+
+---
+
+### 0. Salir
+
+**¿Qué hace?** Cierra el programa.
+
+**⚠️ Advertencia:** No se guardan los datos. El árbol se perderá al salir.
+
+```
+Selecciona una opcion: 0
+
+Gracias por usar el Gestor de Arbol Binario.
+```
+
+---
+
+## Ejemplos Prácticos
+
+### Ejemplo 1: Crear un Árbol Familiar
+
+Vamos a crear un árbol genealógico simple:
+
+```
+    Abuelo
+    /    \
+  Padre  Tía
+   /  \
+Hijo1 Hijo2
+```
+
+**Pasos:**
+
+1. **Crear raíz:**
+   ```
+   Opción: 1
+   Valor: Abuelo
+   ```
+
+2. **Agregar hijo izquierdo (Padre):**
+   ```
+   Opción: 2
+   Nodo padre: Abuelo
+   Valor: Padre
+   ```
+
+3. **Agregar hijo derecho (Tía):**
+   ```
+   Opción: 3
+   Nodo padre: Abuelo
+   Valor: Tía
+   ```
+
+4. **Agregar nieto 1:**
+   ```
+   Opción: 2
+   Nodo padre: Padre
+   Valor: Hijo1
+   ```
+
+5. **Agregar nieto 2:**
+   ```
+   Opción: 3
+   Nodo padre: Padre
+   Valor: Hijo2
+   ```
+
+6. **Ver resultado:**
+   ```
+   Opción: 4
+   
+   Abuelo
+   ├── Tía
+   └── Padre
+       ├── Hijo2
+       └── Hijo1
+   ```
+
+---
+
+### Ejemplo 2: Árbol de Expresión Matemática
+
+Crear el árbol para: `(3 + 5) * 2`
+
+```
+     *
+    / \
+   +   2
+  / \
+ 3   5
+```
+
+**Pasos:**
+
+1. Raíz: `*`
+2. Hijo izquierdo de `*`: `+`
+3. Hijo derecho de `*`: `2`
+4. Hijo izquierdo de `+`: `3`
+5. Hijo derecho de `+`: `5`
+
+**Recorrido Postorden** (evalúa la expresión):
+```
+3 5 + 2 *
+= (3 + 5) * 2
+= 8 * 2
+= 16
+```
+
+---
+
+### Ejemplo 3: Buscar y Eliminar
+
+**Situación:** Tienes este árbol y quieres eliminar el nodo "D"
+
+```
+A
+└── B
+    ├── D
+    └── C
+```
+
+**Pasos:**
+
+1. **Buscar D:**
+   ```
+   Opción: 11
+   Valor: D
+   
+   Resultado:
+   Nodo 'D' encontrado
+     Tiene hijo izquierdo: No
+     Tiene hijo derecho: No
+   ```
+
+2. **Eliminar D:**
+   ```
+   Opción: 12
+   Nodo a eliminar: D
+   
+   Nodo 'D' eliminado
+   ```
+
+3. **Verificar:**
+   ```
+   Opción: 4
+   
+   A
+   └── B
+       └── C
+   ```
+
+---
+
+## Preguntas Frecuentes
+
+### ¿Puedo usar números como valores?
+
+Sí, pero se guardarán como texto. Ejemplo: `5` se guarda como `"5"`.
+
+---
+
+### ¿Puedo tener valores repetidos?
+
+No. El programa no permite valores duplicados. Te mostrará este error:
+
+```
+Error: El dato 'A' ya existe en el arbol.
+```
+
+---
+
+### ¿Se guarda el árbol al cerrar?
+
+No. Al salir del programa se pierde todo. Para guardar tu trabajo:
+- Toma captura de pantalla
+- Anota la estructura
+- Copia los valores mostrados en "Listar nodos"
+
+---
+
+### ¿Qué pasa si reemplazo un hijo existente?
+
+El programa te advierte:
+
+```
+Advertencia: Ya existe un hijo izquierdo. Se reemplazara.
+```
+
+El hijo anterior se perderá junto con todos sus descendientes.
+
+---
+
+### ¿Por qué no puedo eliminar un nodo con dos hijos?
+
+Es una limitación para mantener el programa simple. Para eliminar ese nodo:
+
+1. Primero elimina uno de sus hijos
+2. Luego elimina el nodo deseado
+
+---
+
+### ¿Puedo usar espacios en los valores?
+
+Sí, pero no es recomendable. Mejor usa:
+- Guiones: `Nodo-1`
+- Guiones bajos: `Nodo_1`
+- Sin espacios: `Nodo1`
+
+---
+
+## Solución de Problemas
+
+### Problema: Caracteres extraños en la visualización
+
+**Síntomas:**
+```
+A
+├ÔÇô┬ş C
+```
+
+**Solución:**
+- En Windows: Ejecuta `chcp 65001` antes de correr el programa
+- Asegúrate de usar Python 3.6+
+
+---
+
+### Problema: "Nodo no encontrado"
+
+**Causa:** El valor que buscas no existe.
+
+**Solución:**
+1. Usa la opción `13` para listar todos los nodos
+2. Copia el valor exacto (respeta mayúsculas/minúsculas)
+
+---
+
+### Problema: No puedo ejecutar el programa
+
+**Error común:** `python: command not found`
+
+**Solución:**
+- Verifica que Python esté instalado
+- En algunos sistemas usa `python3` en vez de `python`
+
+---
+
+### Problema: El programa se cierra inmediatamente
+
+**Causa:** Error en el código o archivos faltantes.
+
+**Solución:**
+1. Verifica que los 4 archivos estén en la misma carpeta
+2. Ejecuta desde la terminal para ver errores
+
+---
+
+### Problema: "Error: Arbol vacio"
+
+**Causa:** Intentas operar en un árbol sin nodos.
+
+**Solución:**
+- Usa la opción `1` para crear un nodo raíz primero
+
+---
+
+## Consejos de Uso
+
+### ✅ Buenas Prácticas
+
+1. **Usa nombres descriptivos:** `Raiz`, `Nodo1`, `HojaA`
+2. **Visualiza frecuentemente:** Usa opción `4` después de cada cambio
+3. **Lista nodos antes de eliminar:** Usa opción `13` para ver qué puedes eliminar
+4. **Prueba los recorridos:** Ayudan a entender la estructura
+
+### ❌ Evita
+
+1. **Valores muy largos:** Dificultan la visualización
+2. **Caracteres especiales raros:** `@`, `#`, `%`
+3. **Eliminar sin verificar:** Podrías perder subárboles completos
+
+---
+
+## Ejemplo Completo de Uso
+
+### Sesión Paso a Paso
+
+```
+=== INICIO ===
+Ingresa el valor del nodo raiz: A
+Arbol creado con raiz 'A'
+
+=== AGREGAR NODOS ===
+Opción: 2
+Nodo padre: A
+Valor: B
+
+Opción: 3
+Nodo padre: A
+Valor: C
+
+Opción: 2
+Nodo padre: B
+Valor: D
+
+=== VISUALIZAR ===
+Opción: 4
+
+A
+├── C
+└── B
+    └── D
+
+=== INFORMACIÓN ===
+Opción: 8
+Altura del arbol: 2
+
+Opción: 10
+Peso del arbol (total de nodos): 4
+
+Opción: 13
+Nodos del arbol (4 total): A, B, C, D
+
+=== RECORRIDOS ===
+Opción: 5
+A B D C
+
+Opción: 6
+D B A C
+
+Opción: 7
+D B C A
+
+=== SALIR ===
+Opción: 0
+Gracias por usar el Gestor de Arbol Binario.
+```
+
+---
+
+## Glosario
+
+**Árbol:** Estructura de datos jerárquica con nodos conectados.
+
+**Nodo:** Elemento individual del árbol que contiene un valor.
+
+**Raíz:** Nodo principal del árbol, no tiene padre.
+
+**Hijo:** Nodo conectado debajo de otro nodo (su padre).
+
+**Padre:** Nodo que tiene hijos conectados.
+
+**Hoja:** Nodo sin hijos.
+
+**Altura:** Número de conexiones en el camino más largo.
+
+**Peso:** Cantidad total de nodos en el árbol.
+
+**Subárbol:** Porción del árbol que forma un árbol por sí misma.
+
+**Binario:** Cada nodo tiene máximo 2 hijos.
+
+---
+
+## Recursos Adicionales
+
+### Documentación Técnica
+
+Para información técnica detallada, consulta:
+- `DOCUMENTACION_INTERNA.md` - Para desarrolladores
+- `README.md` - Resumen del proyecto
+
+### Aprender Más
+
+**Sobre Árboles Binarios:**
+- Khan Academy: Estructuras de Datos
+- Visualgo.net: Visualizaciones interactivas
+
+---
+
+## Soporte
+
+Si tienes problemas o preguntas:
+
+1. Revisa esta guía completa
+2. Verifica los [Ejemplos Prácticos](#ejemplos-prácticos)
+3. Consulta [Preguntas Frecuentes](#preguntas-frecuentes)
+4. Contacta al equipo de desarrollo
+
+---
+
+**¡Disfruta explorando árboles binarios!** 🌳
+
+*Manual de Usuario - Versión 1.0*  
+*Proyecto Matemática Discreta - Noviembre 2025*
