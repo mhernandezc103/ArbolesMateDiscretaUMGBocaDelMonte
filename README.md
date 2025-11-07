@@ -466,6 +466,9 @@ con fines educativos y comerciales, siempre que se incluya este aviso.
 - 🎓 Curso: Matemática Discreta
 - 📅 Fecha: Noviembre 2025
 - 🏫 Institución: Universidad Mariano Galvez de Guatemala
+- 👥 Pamela Alvarado 7690-25-16439
+- 👥 Anderson Palma
+- 👥 Marlon Hernandez 7690-25-19080
 
 ---
 
@@ -473,6 +476,7 @@ con fines educativos y comerciales, siempre que se incluya este aviso.
 
 - El Ing. Melvin Cali por mostrar el uso correcto de Markdown
 - Estudiantes que probaron el software
+
 
 
 ---
