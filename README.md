@@ -467,7 +467,7 @@ con fines educativos y comerciales, siempre que se incluya este aviso.
 - 📅 Fecha: Noviembre 2025
 - 🏫 Institución: Universidad Mariano Galvez de Guatemala
 - 👥 Pamela Alvarado 7690-25-16439
-- 👥 Anderson Palma
+- 👥 Anderson Palma 7690 25 2440
 - 👥 Marlon Hernandez 7690-25-19080
 
 ---
